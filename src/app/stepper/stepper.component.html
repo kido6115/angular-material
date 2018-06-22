@@ -1,0 +1,79 @@
+<form [formGroup]="fullGroupForm">
+  <mat-horizontal-stepper [linear]="isLinear">
+    <mat-step formGroupName="basicQuestions" [stepControl]="fullGroupForm.get('basicQuestions')" label="個人資訊">
+      <h4>提供個人資訊</h4>
+      <mat-form-field>
+        <input name="name" matInput placeholder="姓名" formControlName="name" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input name="date" type="date" matInput placeholder="生日" formControlName="date" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <textarea name="intro_self" matInput placeholder="自我介紹" formControlName="intro" required matTextareaAutosize></textarea>
+        <mat-hint>簡單介紹一下你的興趣吧！</mat-hint>
+        <mat-error *ngIf="fullGroupForm.get('basicQuestions').get('intro').hasError('required')">請記得輸入自我介紹喔！</mat-error>
+        <mat-error *ngIf="fullGroupForm.get('basicQuestions').get('intro').hasError('minlength')">至少輸入10個字吧！</mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input type="text" name="country" matInput placeholder="國家" formControlName="country" [matAutocomplete]="countries" />
+      </mat-form-field>
+
+      <mat-autocomplete #countries="matAutocomplete" [displayWith]="displayCountry">
+        <mat-option *ngFor="let country of countries$ | async" [value]="country.name">
+          <span [innerHTML]="highlightFiltered(country.name)"></span>
+        </mat-option>
+      </mat-autocomplete>
+      <br>
+      <mat-form-field>
+        <input type="text" name="majorTech" matInput placeholder="代表技術" formControlName="majorTech" [matAutocomplete]="majorTechs"
+        />
+      </mat-form-field>
+
+      <mat-autocomplete #majorTechs="matAutocomplete">
+        <mat-optgroup *ngFor="let techList of majorTechList" [label]="techList.name">
+          <mat-option *ngFor="let tech of techList.items" [value]="tech">
+            {{ tech }}
+          </mat-option>
+        </mat-optgroup>
+      </mat-autocomplete>
+    </mat-step>
+    <!-- option:非必選欄位label
+    editable="false":不可返回上一步 -->
+    <mat-step optional editable="false" label="詳細問題">
+      <h4>主要的問題內容</h4>
+    </mat-step>
+    <mat-step label="其他">
+      <h4>其他問題</h4>
+    </mat-step>
+  </mat-horizontal-stepper>
+</form>
+<button mat-raised-button color="warn" (click)="isLinear = !isLinear">切換Linear狀態</button>
+<mat-vertical-stepper [linear]="isLinear">
+  <mat-step [stepControl]="basicFormGroup">
+    <form [formGroup]="basicFormGroup">
+      <ng-template matStepLabel>
+        <u>個人資訊</u>
+      </ng-template>
+      <h4>提供個人資訊</h4>
+      <mat-form-field>
+        <input name="name" matInput placeholder="姓名" formControlName="name" required>
+      </mat-form-field>
+    </form>
+    <button mat-button matStepperNext>前進到「詳細問題」</button>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>
+      <em>詳細問題</em>
+    </ng-template>
+    <h4>主要的問題內容</h4>
+    <button mat-button matStepperPrevious>回到「個人資訊」</button>
+    <button mat-button matStepperNext>前進到「其他」</button>
+  </mat-step>
+  <mat-step label="其他">
+    <h4>其他問題</h4>
+    <button mat-button matStepperPrevious>回到「詳細問題」</button>
+  </mat-step>
+</mat-vertical-stepper>

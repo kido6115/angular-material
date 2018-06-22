@@ -38,7 +38,7 @@
           訊息 2-2
         </button>
       </mat-menu>
-      
+
   <button mat-icon-button>
     <mat-icon>exit_to_app</mat-icon>
   </button>
@@ -56,7 +56,7 @@
         I'm navigation
         <mat-nav-list>
             <h3 matSubheader>示範用頁面</h3>
-            <a [routerLink]="['/', 'dashboard', 'survey']" mat-list-item>問卷調查</a>
+            <a [routerLink]="['/', 'sidenav', 'stepper']" mat-list-item>Stepper</a>
             <a [routerLink]="['/', 'dashboard', 'blog']" mat-list-item>部落格</a>
             <a [routerLink]="['/', 'dashboard', 'inbox']" mat-list-item>收件夾</a>
             <h3 matSubheader>其他頁面</h3>
@@ -76,13 +76,15 @@
           </mat-radio-group>
           <button mat-raised-button color="warn" (click)="menuTrigger.toggleMenu()">開啟訊息設定</button>
         <div class="eg-content">
+            <mat-sidenav-container>
             <router-outlet></router-outlet>
+            </mat-sidenav-container>
           </div>
     </mat-sidenav-content>
     </mat-sidenav-container>
         <style>
           .eg-content{
-            width: 80%;
+            width: 95%;
             height: 500px; 
             background-color: aliceblue;
           }
