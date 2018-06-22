@@ -1,10 +1,14 @@
   <div style="text-align:center">
-      <nav>
-          <button routerLink="/" mat-raised-button color="primary">Index</button>
-          <button routerLink="/button" mat-raised-button color="primary">Button</button>
-      </nav>
+      <mat-toolbar>Header&nbsp;&nbsp;
+          <nav>
+            <button routerLink="/" mat-raised-button color="primary">Index</button>
+            <button routerLink="/button" mat-raised-button color="primary">Button</button>
+            <button routerLink="/sidenav" mat-raised-button color="primary">Sidenav</button>
+        </nav>
+    </mat-toolbar>
+      
       <mat-sidenav-container>
       <router-outlet></router-outlet>
     </mat-sidenav-container>
-
+    <mat-toolbar>Footer</mat-toolbar>
 </div>
