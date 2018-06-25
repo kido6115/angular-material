@@ -22,7 +22,7 @@ import { StepperComponent } from './stepper/stepper.component';
   ],
   imports: [
     BrowserModule,BrowserAnimationsModule,SharedMaterialModule, AppRoutingModule,FormsModule,ReactiveFormsModule, SidenavRoutingModule
-    ,HttpClientModule,
+    ,HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
