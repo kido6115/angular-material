@@ -11,6 +11,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { SecondSidenavComponent } from './second-sidenav/second-sidenav.component';
 import { SidenavRoutingModule } from './/sidenav-routing.module';
 import { StepperComponent } from './stepper/stepper.component';
+import { GridComponent } from './grid/grid.component';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
   declarations: [
@@ -18,8 +20,10 @@ import { StepperComponent } from './stepper/stepper.component';
     MatbuttonComponent,
     SidnavComponent,
     SecondSidenavComponent,
-    StepperComponent
-  ],
+    StepperComponent,
+    GridComponent,
+    CardComponent
+    ],
   imports: [
     BrowserModule,BrowserAnimationsModule,SharedMaterialModule, AppRoutingModule,FormsModule,ReactiveFormsModule, SidenavRoutingModule
     ,HttpClientModule

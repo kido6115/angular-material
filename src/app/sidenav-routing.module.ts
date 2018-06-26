@@ -1,3 +1,5 @@
+import { CardComponent } from './card/card.component';
+import { GridComponent } from './grid/grid.component';
 import { Routes, RouterModule } from '@angular/router';
 import { SidnavComponent } from './sidnav/sidnav.component';
 import { NgModule } from '@angular/core';
@@ -9,7 +11,10 @@ const routes: Routes = [
     component: SidnavComponent,
     children: [{ path: 'second', component: SecondSidenavComponent }
               ,{path:'',redirectTo:'/',pathMatch:'full'}
-              ,{ path: 'stepper', component: StepperComponent }]
+              ,{ path: 'stepper', component: StepperComponent }
+              ,{ path: 'grid', component: GridComponent }
+              ,{ path: 'card', component: CardComponent }
+            ]
   }
 ];
 @NgModule({
