@@ -13,6 +13,9 @@ import { SidenavRoutingModule } from './/sidenav-routing.module';
 import { StepperComponent } from './stepper/stepper.component';
 import { GridComponent } from './grid/grid.component';
 import { CardComponent } from './card/card.component';
+import { AddPostDialogComponent } from './add-post-dialog/add-post-dialog.component';
+import { AddPostConfirmDialogComponent } from './add-post-confirm-dialog/add-post-confirm-dialog.component';
+import { CustomeSnackBarComponent } from './custome-snack-bar/custome-snack-bar.component';
 
 @NgModule({
   declarations: [
@@ -22,12 +25,16 @@ import { CardComponent } from './card/card.component';
     SecondSidenavComponent,
     StepperComponent,
     GridComponent,
-    CardComponent
+    CardComponent,
+    AddPostDialogComponent,
+    AddPostConfirmDialogComponent,
+    CustomeSnackBarComponent
     ],
   imports: [
     BrowserModule,BrowserAnimationsModule,SharedMaterialModule, AppRoutingModule,FormsModule,ReactiveFormsModule, SidenavRoutingModule
     ,HttpClientModule
   ],
+  entryComponents: [AddPostDialogComponent,AddPostConfirmDialogComponent,CustomeSnackBarComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

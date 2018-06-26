@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { MatButtonModule, MatIconModule, MatButtonToggleModule, MatSidenavModule, MatToolbarModule, MatRadioModule, MatListModule, MatMenuModule, MatStepperModule, MatFormFieldModule, MatInputModule, MatAutocompleteModule, MatDatepickerModule, MAT_DATE_LOCALE, MAT_DATE_FORMATS, MatSelectModule, MatCheckboxModule, MatSlideToggleModule, MatSliderModule, MatGridListModule, MatCardModule, MatProgressBarModule, MatProgressSpinnerModule } from '@angular/material';
+import { MatButtonModule, MatIconModule, MatButtonToggleModule, MatSidenavModule, MatToolbarModule, MatRadioModule, MatListModule, MatMenuModule, MatStepperModule, MatFormFieldModule, MatInputModule, MatAutocompleteModule, MatDatepickerModule, MAT_DATE_LOCALE, MAT_DATE_FORMATS, MatSelectModule, MatCheckboxModule, MatSlideToggleModule, MatSliderModule, MatGridListModule, MatCardModule, MatProgressBarModule, MatProgressSpinnerModule, MatDialogModule, MatChipsModule, MatTooltipModule, MatSnackBarModule } from '@angular/material';
 import{MatMomentDateModule} from '@angular/material-moment-adapter';
 
 export const TW_FORMATS = {
@@ -17,7 +17,8 @@ export const TW_FORMATS = {
   exports: [
     MatButtonModule,MatIconModule,MatButtonToggleModule,MatSidenavModule,MatToolbarModule,MatRadioModule,MatListModule,MatMenuModule,
     MatStepperModule,MatFormFieldModule,MatInputModule,MatAutocompleteModule,MatDatepickerModule,MatMomentDateModule,MatSelectModule,
-    MatCheckboxModule,MatSlideToggleModule,MatSliderModule,MatGridListModule,MatCardModule,MatProgressBarModule,MatProgressSpinnerModule
+    MatCheckboxModule,MatSlideToggleModule,MatSliderModule,MatGridListModule,MatCardModule,MatProgressBarModule,MatProgressSpinnerModule,
+    MatDialogModule,MatChipsModule,MatTooltipModule,MatSnackBarModule
     
   ],
   declarations: [],

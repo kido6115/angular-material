@@ -1,3 +1,5 @@
+import { AddPostDialogComponent } from './../add-post-dialog/add-post-dialog.component';
+import { MatDialog, MatDialogRef } from '@angular/material';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -12,7 +14,7 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 export class CardComponent implements OnInit {
 
   posts$:Observable<any>;
-  constructor(private httpClient:HttpClient) { 
+  constructor(private httpClient:HttpClient,public dialog:MatDialog) { 
     
   }
   process:number;
@@ -22,6 +24,14 @@ export class CardComponent implements OnInit {
     this.posts$ = this.httpClient.get<any[]>('https://jsonplaceholder.typicode.com/posts').pipe(map(posts=>{
       return posts.slice(0, 6);
     }));
+    this.dialog.afterAllClosed.subscribe(() => {
+      console.log('目前已經沒有dialog了');
+    });
+    
+    this.dialog.afterOpen.subscribe((dialogRef: MatDialogRef<any>) => {
+      console.log(`新的dialog已開啟：${dialogRef.id}`);
+      console.log(`目前已開啟 ${this.dialog.openDialogs.length} 個dialog了`);
+    });
     this.process=70;
     this.width=5;
     this.diameter=50;
@@ -45,6 +55,9 @@ export class CardComponent implements OnInit {
   }
   minusDiameter(){
     this.diameter-=50;
+  }
+  showAddPostDialog(){
+    this.dialog.open(AddPostDialogComponent);
   }
 
 }

@@ -1,0 +1,46 @@
+<h2 mat-dialog-title>
+  新增部落格文章
+</h2>
+
+<mat-dialog-content class="post-form">
+  <mat-form-field>
+    <input matInput placeholder="標題" [(ngModel)]="title" matTooltip="替你的文章下一個漂亮的標題吧！" />
+  </mat-form-field>
+  <mat-form-field>
+    <textarea matInput placeholder="文章內容" rows="3" matTooltip="替你的文章寫一個漂亮內容"></textarea>
+  </mat-form-field>
+
+  <p>條款01</p>
+  <p>條款02</p>
+  <p>條款03</p>
+  <p>條款04</p>
+  <p>條款05</p>
+
+</mat-dialog-content>
+<h4>文章標籤</h4>
+<mat-chip-list>
+  <mat-chip color="primary" selected="true">JavaScript</mat-chip>
+  <mat-chip color="warn" selected="true">Material Design</mat-chip>
+  <mat-chip color="accent" selected="true">Angular Material</mat-chip>
+  <mat-basic-chip>HTML</mat-basic-chip>
+</mat-chip-list>
+  <mat-chip-list #chipList>
+    <mat-chip *ngFor="let tag of tags" (removed)="removeTag(tag)">
+      {{tag}}
+      <mat-icon matChipRemove>cancel</mat-icon>
+    </mat-chip>
+  </mat-chip-list>
+  <input placeholder="文章標籤" [matChipInputFor]="chipList" [matChipInputAddOnBlur]="true" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+    (matChipInputTokenEnd)="addTag($event)" />
+<mat-dialog-actions>
+  <button mat-button color="primary" (click)="doPost()">發表</button>
+  <button mat-button mat-dialog-close color="warn">取消</button>
+</mat-dialog-actions>
+<style>
+  .mat-basic-chip {
+    background: lime;
+    margin: 0 0 0 8px;
+    padding: 7px 12px;
+    border-radius: 5px;
+  }
+</style>
