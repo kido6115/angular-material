@@ -1,0 +1,9 @@
+<agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoomValue">
+        <agm-data-layer [geoJson]="geoJson"></agm-data-layer>
+        <agm-marker [latitude]="lat" [longitude]="lng" [iconUrl]="iconUrl" (markerClick)="markerClick(infowindow)"></agm-marker>
+        <agm-info-window #infowindow [latitude]="lat+0.0005" [longitude]="lng" [isOpen]="isOpen">
+                        <h5 class="content">國立臺中科技大學</h5>
+                        <p class="content">National Taichung University of Science and Technology.</p>
+        </agm-info-window>
+        
+</agm-map>

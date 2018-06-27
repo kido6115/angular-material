@@ -1,3 +1,4 @@
+import { MapComponent } from './map/map.component';
 import { TabComponent } from './tab/tab.component';
 import { InboxComponent } from './inbox/inbox.component';
 import { CardComponent } from './card/card.component';
@@ -18,6 +19,7 @@ const routes: Routes = [
               ,{ path: 'card', component: CardComponent }
               ,{ path: 'expansion-panel', component: InboxComponent }
               ,{ path: 'tab', component: TabComponent }
+              ,{ path: 'map', component: MapComponent }
 
             ]
   }

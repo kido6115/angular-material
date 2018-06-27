@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { SharedMaterialModule } from './shared-material/shared-material.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -20,6 +20,8 @@ import { InboxComponent } from './inbox/inbox.component';
 import { TabComponent } from './tab/tab.component';
 import { TableComponent } from './table/table.component';
 import { Table2Component } from './table2/table2.component';
+import { MapComponent } from './map/map.component';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -36,11 +38,14 @@ import { Table2Component } from './table2/table2.component';
     InboxComponent,
     TabComponent,
     TableComponent,
-    Table2Component
+    Table2Component,
+    MapComponent
     ],
   imports: [
     BrowserModule,BrowserAnimationsModule,SharedMaterialModule, AppRoutingModule,FormsModule,ReactiveFormsModule, SidenavRoutingModule
-    ,HttpClientModule
+    ,HttpClientModule,AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBgkSTUKQ5NYL99GCmZrNPEaXEoNHi2Mq0',
+    language: 'zh-TW'}),HttpClientJsonpModule
   ],
   entryComponents: [AddPostDialogComponent,AddPostConfirmDialogComponent,CustomeSnackBarComponent,InboxComponent],
   providers: [],
