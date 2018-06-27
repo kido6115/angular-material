@@ -16,6 +16,10 @@ import { CardComponent } from './card/card.component';
 import { AddPostDialogComponent } from './add-post-dialog/add-post-dialog.component';
 import { AddPostConfirmDialogComponent } from './add-post-confirm-dialog/add-post-confirm-dialog.component';
 import { CustomeSnackBarComponent } from './custome-snack-bar/custome-snack-bar.component';
+import { InboxComponent } from './inbox/inbox.component';
+import { TabComponent } from './tab/tab.component';
+import { TableComponent } from './table/table.component';
+import { Table2Component } from './table2/table2.component';
 
 @NgModule({
   declarations: [
@@ -28,13 +32,17 @@ import { CustomeSnackBarComponent } from './custome-snack-bar/custome-snack-bar.
     CardComponent,
     AddPostDialogComponent,
     AddPostConfirmDialogComponent,
-    CustomeSnackBarComponent
+    CustomeSnackBarComponent,
+    InboxComponent,
+    TabComponent,
+    TableComponent,
+    Table2Component
     ],
   imports: [
     BrowserModule,BrowserAnimationsModule,SharedMaterialModule, AppRoutingModule,FormsModule,ReactiveFormsModule, SidenavRoutingModule
     ,HttpClientModule
   ],
-  entryComponents: [AddPostDialogComponent,AddPostConfirmDialogComponent,CustomeSnackBarComponent],
+  entryComponents: [AddPostDialogComponent,AddPostConfirmDialogComponent,CustomeSnackBarComponent,InboxComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -21,6 +21,7 @@ export class SidnavComponent implements OnInit {
     alert('isClosed');
 
   }
+    
   constructor() { }
 
   ngOnInit() {

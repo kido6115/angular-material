@@ -1,3 +1,5 @@
+import { TabComponent } from './tab/tab.component';
+import { InboxComponent } from './inbox/inbox.component';
 import { CardComponent } from './card/card.component';
 import { GridComponent } from './grid/grid.component';
 import { Routes, RouterModule } from '@angular/router';
@@ -14,6 +16,9 @@ const routes: Routes = [
               ,{ path: 'stepper', component: StepperComponent }
               ,{ path: 'grid', component: GridComponent }
               ,{ path: 'card', component: CardComponent }
+              ,{ path: 'expansion-panel', component: InboxComponent }
+              ,{ path: 'tab', component: TabComponent }
+
             ]
   }
 ];

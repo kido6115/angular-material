@@ -5,7 +5,6 @@
     <span>Angular Material</span>
     <!-- 在這之後的都會被推到右邊去 -->
   <span class="toolbar-seprator"></span>
-
   <button mat-icon-button [matMenuTriggerFor]="messageMenu" #menuTrigger="matMenuTrigger">
     <mat-icon>message</mat-icon>
   </button>
@@ -59,6 +58,8 @@
             <a [routerLink]="['/', 'sidenav', 'stepper']" mat-list-item>Stepper</a>
             <a [routerLink]="['/', 'sidenav', 'grid']" mat-list-item>Grid</a>
             <a [routerLink]="['/', 'sidenav', 'card']" mat-list-item>Card</a>
+            <a [routerLink]="['/', 'sidenav', 'expansion-panel']" mat-list-item>Expansion Panel</a>
+            <a [routerLink]="['/', 'sidenav', 'tab']" mat-list-item>Tab</a>
 
             <h3 matSubheader>其他頁面</h3>
             <button routerLink="/sidenav" mat-raised-button color="primary">index</button>
